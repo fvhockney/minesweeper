@@ -1,3 +1,6 @@
 export default {
-    test: 1
+    minefield: {},
+    explosion: false,
+    showGreet: true,
+    showField: false
 }
