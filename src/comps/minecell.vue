@@ -1,11 +1,11 @@
 <template>
     <div @click.left="dig(dangerZone)" @click.right.prevent="flag(dangerZone)" class="square cell"
          :class="[dangerZone.uncovered ? 'show' : dangerZone.flagged ? 'flagged' : 'covered']">
-        <!--<template v-if="dangerZone.uncovered">-->
-            <span v-if="dangerZone.hasBomb">!!!</span>
+        <template v-if="dangerZone.uncovered">
+            <span v-if="dangerZone.hasBomb" class='text-danger'>!!!</span>
             <span v-else-if="numberOfBombs(x,y) === 0"></span>
             <span v-else :class="'number-'+numberOfBombs(x,y)">{{numberOfBombs(x,y)}}</span>
-        <!--</template>-->
+        </template>
     </div>
 </template>
 
@@ -26,7 +26,7 @@
         watch: {
             'dangerZone.uncovered': function () {
                 this.dangerZone = this.cell(this.x, this.y)
-                if (this.numberOfBombs(this.x, this.y) === 0 && this.dangerZone.uncovered) {
+                if (this.numberOfBombs(this.x, this.y) === 0 && this.dangerZone.uncovered && !this.dangerZone.hasBomb) {
                     this.checkAdjacent(this.dangerZone)
                 }
             },
@@ -44,17 +44,19 @@
 
 <style lang="scss" scoped>
     .square {
-        width: 50px;
-        height: 50px;
+        width: 24px;
+        height: 24px;
     }
 
     .show {
         background-color: darkgray;
+        box-shadow: gray inset 0 0 10px 1px;
+        outline: solid 1px gray;
     }
 
     .covered {
         background-color: lightgray;
-        box-shadow: gray inset 2px 2px;
+        outline: solid 1px gray;
     }
 
     .flagged {
@@ -66,6 +68,7 @@
         align-items: center;
         justify-content: center;
         font-weight: bold;
+        font-size: 14px;
         .number-1 {color: darkblue}
         .number-2 {color: royalblue}
         .number-3 {color: darkgreen}

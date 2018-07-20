@@ -1,5 +1,5 @@
 <template>
-    <b-alert :show="explosion || won">
+    <b-alert id="game-message" :show="explosion || won" :variant="variant">
         <span v-if="explosion">You Lost</span>
         <span v-if="won">You Won</span>
     </b-alert>
@@ -10,12 +10,18 @@
     export default {
         name: "GameMessage",
         computed: {
+          variant: function (){
+            return this.won ? 'success' : 'danger'
+          },
             ...mapState(['explosion']),
             ...mapGetters(['won'])
         }
     }
 </script>
 
-<style scoped>
-
+<style lang='scss' scoped>
+#game-message {
+  position: absolute;
+  top: 10%;
+}
 </style>

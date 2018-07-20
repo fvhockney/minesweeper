@@ -1,7 +1,7 @@
 <template>
-    <div>
+    <div class="d-flex justify-content-center full-page">
         <greet-screen v-if="showGreet"></greet-screen>
-        <minefield></minefield>
+        <minefield v-if="!showGreet" class="p-4"></minefield>
         <game-message></game-message>
     </div>
 </template>
@@ -28,6 +28,8 @@
     }
 </script>
 
-<style scoped>
-
+<style lang="scss" scoped>
+  .full-page {
+    min-height: 100vh;
+  }
 </style>

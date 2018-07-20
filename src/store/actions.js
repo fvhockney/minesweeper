@@ -11,7 +11,6 @@ export default {
         })
     },
     generateField: function ({state, commit, getters}, level) {
-        console.log(level)
         commit('makeField', level)
         commit('toggleGreet')
         commit('toggleField')

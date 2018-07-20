@@ -1,19 +1,19 @@
 export default {
     beginner: {
         bombs: 10,
-        rows: 6,
-        cols: 5,
+        rows: 8,
+        cols: 8,
     },
 
     advanced: {
-        bombs: 20,
-        rows: 10,
-        cols: 12,
+        bombs: 40,
+        rows: 16,
+        cols: 16,
     },
 
     expert: {
-        bombs: 35,
-        rows: 20,
-        cols: 15
+        bombs: 99,
+        rows: 24,
+        cols: 24
     }
 }

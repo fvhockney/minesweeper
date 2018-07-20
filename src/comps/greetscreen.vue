@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="my-auto">
         <b-form-group label="Choose your poison!">
             <b-form-radio-group :options="levels" v-model="selected" name="mineLevels"></b-form-radio-group>
         </b-form-group>

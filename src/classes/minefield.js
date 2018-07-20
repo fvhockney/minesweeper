@@ -25,7 +25,7 @@ export default class Minefield {
     }
 
     _buryMine(bombs, areaLeft) {
-        return Math.random() > (bombs / areaLeft)
+        return Math.random() < (bombs / areaLeft)
     }
 
 }
