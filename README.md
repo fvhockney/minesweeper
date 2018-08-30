@@ -1,4 +1,4 @@
-#Minesweeper
+# Minesweeper
 
 This is my take on the classic Minesweeper. This project is purely for fun and experimentation. This is a completely Javascript game and written with the Vue framework. However, in order to allow Vue to handle mostly logic, I created a Jacascript class to handle the creation and 'mining' of the field itself, which is then passed in to the store.
 
