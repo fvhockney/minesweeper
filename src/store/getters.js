@@ -1,4 +1,4 @@
-export default {
+export const getters = {
     numberOfBombs: (state, getters) => (x, y) => {
         return _.filter(getters.adjacent(x, y), 'hasBomb').length
     },

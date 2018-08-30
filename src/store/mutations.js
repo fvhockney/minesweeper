@@ -1,7 +1,7 @@
 import Minefield from "../classes/minefield";
-import Settings from "../classes/config";
+import { settings } from "../classes/config";
 
-export default {
+export const mutations = {
     flag: function (state, dangerZone) {
         if (!dangerZone.uncovered) {
             dangerZone.flagged = !dangerZone.flagged
@@ -22,7 +22,7 @@ export default {
     },
     makeField: function (state, level) {
         let config
-        config = Settings[level]
+        config = settings[level]
         state.minefield = new Minefield({'height': config.rows, 'width': config.cols, 'bombs': config.bombs})
     }
 }

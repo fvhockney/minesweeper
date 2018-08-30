@@ -1,4 +1,4 @@
-export default {
+export const settings = {
     beginner: {
         bombs: 10,
         rows: 8,
